@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare Dashboard</title>
+<link rel="stylesheet" href="../css/dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>LifeCare Plus</h1>
+  <nav>
+    <a href="../index.html" class="bounce-hover">🏠 Home</a>
+    <a href="Services.html" class="bounce-hover">💊 Services</a>
+    <a href="#" class="bounce-hover" onclick="logout()">🔒 Logout</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-text">
+    <h2>Stay Informed About Your Health 🩺</h2>
+    <p>Everything you need for your health, at a glance.</p>
+  </div>
+  </div>
+</section>
+
+<section class="dashboard" id="dashboard">
+  <h2>Your Dashboard 📋</h2>
+  <p>Quick access to our services.</p>
+
+  <div class="dashboard-container">
+    <div class="card">
+      <img src="https://shrihospital.org/wp-content/uploads/2023/06/pic1-844x1024.png" alt="Appointment">
+      <div class="card-content">
+        <h3>Book an Appointment </h3>
+        <p>Choose your doctor and preferred time slot</p>
+        <a href="Appointments.html">Book now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://media.istockphoto.com/id/1305963775/vector/male-doctor-is-checking-medical-history-of-a-patient.jpg?s=612x612&w=0&k=20&c=QCzklF30ugWO-t7LVF0tJ5j-Gk4RlZIISeZ3-6Jlzik=" alt="Medical History">
+      <div class="card-content">
+        <h3>Upload Medical History </h3>
+        <p>Submit your past medical reports and history.</p>
+        <a href="Medical-History.html">Upload Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://www.intelichart.com/hubfs/Intelichart_2021/illustration-phone.png" alt="Patient Portal">
+      <div class="card-content">
+        <h3>Patient Portal </h3>
+        <div id="patientDescription" style="text-align:center; margin-top:2px; font-size:16px; color:#555;">
+          Loading patient information...
+        </div>
+        <a id="patientCardLink" href="#">Loading...</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming Appointments Toast -->
+<div id="appointmentsToast" class="toast-container">
+    <div class="toast-header">
+        <strong>Upcoming Appointments 📅</strong>
+        <span class="toast-close">&times;</span>
+    </div>
+    <ul id="upcomingAppointmentsList" class="toast-list"></ul>
+</div>
+
+<script src="../js/dashboard.js"></script>
+</body>
+</html>

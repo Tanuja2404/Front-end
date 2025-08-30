@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Portal</title>
+<link rel="stylesheet" href="../css/patient-portal.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>LifeCare Plus</h1>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="Dashboard.html">Dashboard</a>
+    <a href="#" id="logoutBtn">Logout</a>
+  </nav>
+</header>
+
+<section class="dashboard">
+  <div class="patient-card">
+    <h2>Patient Details</h2>
+    <div id="patientDetails">
+      <p><b>Name: <span id="patientName">-</span></b></p>
+      <p><b>Age: <span id="patientAge">-</span></b></p>
+      <p><b>DOB: <span id="patientDOB">-</span></b></p>
+      <p><b>Gender: <span id="patientGender">-</span></b></p>
+      <p><b>Contact Number: <span id="patientPhone">-</span></b></p>
+      <p><b>Email: <span id="patientEmail">-</span></b></p>
+      <p><b>Address: <span id="patientAddress">-</span></b></p>
+    </div>
+
+    <div id="patientActions">
+      <button id="editBtn">Edit</button>
+      <button id="deleteBtn">Delete</button>
+    </div>
+
+    <div id="editFormContainer">
+      <form id="editPatientForm">
+        <label>Name: <input type="text" id="editName" /></label>
+        <label>Age: <input type="number" id="editAge" /></label>
+        <label>DOB: <input type="date" id="editDOB" /></label>
+        <label>Gender: 
+          <select id="editGender">
+            <option value="">Select</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label>Contact Number: <input type="tel" id="editPhone" /></label>
+        <label>Email: <input type="email" id="editEmail" /></label>
+        <label>Address: <textarea id="editAddress" rows="3"></textarea></label>
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="appointments-card">
+    <h2>Your Appointments</h2>
+    <div id="appointmentsSection">
+      <p>Loading appointments...</p>
+    </div>
+  </div>
+</section>
+
+<script src="../js/patient-portal.js"></script>
+</body>
+</html>

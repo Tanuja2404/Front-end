@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<title>Book an Appointment</title>
+<link rel="stylesheet" href="../css/appointments.css">
+</head>
+<body>
+
+<header>
+  <h1>LifeCare Plus</h1>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="AboutUs.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><button onclick="logout()">Logout</button></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="appointment-container">
+  <div class="appointment-box">
+    <h2>Book Appointment</h2>
+    <form id="appointmentForm">
+      <label for="name">Patient Name:</label>
+      <input type="text" id="name" placeholder="Enter patient name" required>
+
+      <label for="email">Email ID:</label>
+      <input type="email" id="email" placeholder="Enter your email id" required>
+
+      <label for="phone">Phone number:</label>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+
+      <label for="speciality">Speciality:</label>
+      <select id="speciality" required>
+        <option value="">-- Select Speciality --</option>
+        <option value="General Medicine">General Medicine</option>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Orthopedics">Orthopedics</option>
+        <option value="Radiology">Radiology</option>
+      </select>
+
+      <label for="doctor">Doctor (Optional):</label>
+      <input type="text" id="doctor" placeholder="Enter doctor name (optional)">
+
+      <label for="reason">Reason (Optional):</label>
+      <textarea id="reason" placeholder="Reason for appointment"></textarea>
+
+      <label for="date">Select Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="time">Select Time Slot:</label>
+      <select id="time" required>
+        <option value="">-- Select Time --</option>
+      </select>
+
+      <button type="submit">Book Appointment</button>
+    </form>
+    <div id="message"></div>
+  </div>
+</div>
+
+<script src="../js/appointments.js"></script>
+</body>
+</html>

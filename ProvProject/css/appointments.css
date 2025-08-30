@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #E3FDFD, #CBF1F5, #A6E3E9);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid #A6E3E9;
+}
+
+header h1 {
+  color: #026d6d;
+  font-size: 26px;
+  margin: 0;
+  font-weight: 700;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a,
+nav ul li button {
+  text-decoration: none;
+  color: #026d6d;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+  color: #00bfa5;
+  transform: scale(1.1);
+}
+
+/* Appointment Container */
+.appointment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  flex: 1;
+}
+
+/* Appointment Box */
+.appointment-box {
+  background: #ffffffdd;
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 35px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease;
+}
+
+.appointment-box h2 {
+  color: #00796b;
+  font-size: 26px;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* Labels & Inputs */
+.appointment-box label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  color: #034d4d;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.appointment-box input,
+.appointment-box select,
+.appointment-box textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border: 2px solid #A6E3E9;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-bottom: 18px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.appointment-box input:focus,
+.appointment-box select:focus,
+.appointment-box textarea:focus {
+  outline: none;
+  border-color: #00bfa5;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 191, 165, 0.2);
+}
+
+.appointment-box textarea {
+  resize: none;
+  height: 60px;
+}
+
+/* Button */
+.appointment-box button {
+  width: 100%;
+  padding: 14px;
+  background: #00bfa5;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.appointment-box button:hover {
+  background: #00796b;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 191, 165, 0.3);
+}
+
+/* Message */
+#message {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* Booked Slots */
+option.booked {
+  color: #999;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .appointment-box {
+    padding: 25px;
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}

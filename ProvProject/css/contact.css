@@ -1,0 +1,159 @@
+body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #e6f7f6; /* 🌸 Single pastel background */
+    }
+
+    /* 🌸 Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: #B5EAD7;
+      color: #034d4d;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    nav a {
+      color: #034d4d;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.2s;
+    }
+    nav a:hover {
+      color: #026d6d;
+      transform: scale(1.1);
+    }
+
+    /* 🌼 Contact Section */
+    .contact-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 50px;
+    }
+
+    /* Contact Card */
+    .floating-form {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1s ease-in;
+    }
+
+    .floating-form h2 {
+      margin-bottom: 20px;
+      color: #034d4d;
+      text-align: center;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #a8edea;
+      border-radius: 10px;
+      background: transparent;
+      font-size: 14px;
+      outline: none;
+      resize: none;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      color: #666;
+      font-size: 14px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    .form-group input:focus ~ label,
+    .form-group input:valid ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group textarea:valid ~ label {
+      top: -10px;
+      left: 8px;
+      font-size: 12px;
+      color: #034d4d;
+      background: #fff;
+      padding: 0 5px;
+    }
+
+    button {
+      background: #a8edea;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s;
+    }
+    button:hover {
+      background: #82d6cf;
+      animation: bounce 0.6s ease;
+    }
+    .bounce-hover {
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .bounce-hover:hover {
+      animation: bounce 0.6s ease;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🌟 Contact Info + Map */
+    .contact-info {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      color: #034d4d;
+    }
+    .contact-info h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .contact-info p {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+    .map-container {
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #034d4d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical History</title>
+    <link rel="stylesheet" href="../css/medical-history.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>LifeCare Plus
+      <nav>
+        <a href="../index.html" class="bounce-hover">Home</a>
+        <a href="Services.html" class="bounce-hover">Services</a>
+        <a href="#" class="bounce-hover" onclick="logout()">Logout</a>
+      </nav>
+    </header>
+
+    <div class="container">
+        <h2>Your Medical History</h2>
+        <div id="historyList">
+            <p>Loading medical history...</p>
+        </div>
+
+        <!-- Add New Button -->
+        <button id="showFormBtn" class="btn btn-add">+ Add New Medical History</button>
+
+        <!-- Medical History Form -->
+        <form id="medicalHistoryForm">
+            <h2 style="color:#008080;" id="formHeading">Add Medical History</h2>
+            <label for="condition">Condition:</label>
+            <input type="text" id="condition" required>
+
+            <label for="diagnosis_date">Diagnosis Date:</label>
+            <input type="date" id="diagnosis_date" required>
+
+            <label for="medications">Medications:</label>
+            <input type="text" id="medications">
+
+            <label for="allergies">Allergies:</label>
+            <input type="text" id="allergies">
+
+            <label for="treatment">Treatment:</label>
+            <input type="text" id="treatment">
+
+            <label for="notes">Notes:</label>
+            <textarea id="notes"></textarea>
+
+            <button type="submit" class="btn btn-add" id="submitBtn">Save Record</button>
+        </form>
+    </div>
+
+    <script src="../js/medical-history.js"></script>
+</body>
+</html>

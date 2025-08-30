@@ -1,0 +1,200 @@
+/* ===========================
+   Global Styles
+=========================== */
+* {
+  margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #f5f8fc, #e0f7f9); /* subtle calming gradient */
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+/* Header */
+header {
+  background: #B5EAD7;
+  color: #034d4d;
+  padding: 15px 60px;
+  display:flex; justify-content:space-between; align-items:center;
+  position: fixed; width:100%; top:0; left:0; z-index:100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Transition & Animation */
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.5s ease;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: headerSlideDown 0.8s forwards;
+}
+@keyframes headerSlideDown {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+header:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+header h1 { font-size:22px; }
+
+nav a {
+  color:#034d4d;
+  margin-left:25px;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover { color:#026d6d; transform: translateY(-2px); }
+
+/* Dashboard Section */
+.dashboard {
+  padding: 120px 20px 50px; /* extra top padding for fixed header */
+}
+
+/* Cards */
+.patient-card, .appointments-card {
+  background: linear-gradient(145deg, #d0f0f0, #e0f7f7);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.patient-card:hover, .appointments-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.patient-card h2, .appointments-card h2 {
+  text-align:center; color:#034d4d; margin-bottom:20px;
+  opacity:0; transform: translateY(-20px);
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity:1; transform: translateY(0); }
+}
+
+.patient-card p, .appointments-card p { font-size:16px; line-height:1.5; margin-bottom:10px; }
+.patient-card span { font-weight:500; }
+
+/* Actions */
+#patientActions { text-align:center; margin-top:20px; }
+#editBtn, #deleteBtn {
+  border:none; font-weight:600; padding:8px 18px; border-radius:8px;
+  cursor:pointer; margin:5px; transition: 0.3s ease, transform 0.2s ease;
+}
+#editBtn { background:#026d6d; color:white; }
+#editBtn:hover { background:#034d4d; transform: scale(1.05); }
+#deleteBtn { background:red; color:white; }
+#deleteBtn:hover { opacity:0.9; transform: scale(1.05); }
+
+/* Edit Form */
+#editFormContainer {
+  display:none;
+  margin-top:20px;
+  background: rgba(255,255,255,0.95);
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.1);
+  animation: fadeSlide 0.6s forwards;
+}
+
+@keyframes fadeSlide {
+  0% { opacity:0; transform: translateY(20px); }
+  100% { opacity:1; transform: translateY(0); }
+}
+
+#editPatientForm label {
+  display:block;
+  margin:12px 0 5px;
+  font-weight:600;
+}
+
+#editPatientForm input,
+#editPatientForm select,
+#editPatientForm textarea {
+  width:100%; padding:10px; border-radius:8px; border:1px solid #ccc;
+  transition:border-color 0.3s, box-shadow 0.3s, transform 0.2s ease;
+}
+
+#editPatientForm input:focus,
+#editPatientForm select:focus,
+#editPatientForm textarea:focus {
+  border-color:#034d4d;
+  outline:none;
+  box-shadow:0 0 10px rgba(3,77,77,0.3);
+  transform: scale(1.01);
+}
+
+#editPatientForm button {
+  background:#026d6d;
+  color:white;
+  border:none;
+  border-radius:8px;
+  padding:10px 25px;
+  font-weight:600;
+  cursor:pointer;
+  margin-top:15px;
+  transition: background 0.3s, transform 0.2s ease;
+}
+#editPatientForm button:hover { background:#034d4d; transform:scale(1.05); }
+
+/* Tables */
+table {
+  width:100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td { border: 1px solid #ccc; }
+th, td { padding: 10px; text-align: left; }
+th { background-color: #b2dfdb; color:#004d40; }
+
+/* Delete appointment button */
+.delete-appt {
+  background: red; color: white; border: none; padding: 6px 12px; border-radius: 6px;
+  cursor: pointer; transition: transform 0.2s ease, opacity 0.3s ease;
+}
+.delete-appt:hover { opacity: 0.9; transform: scale(1.05); }
+
+/* Patient Form Portal Background */
+.patient-form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.patient-form-container::before {
+  content:'';
+  position: absolute;
+  top:0; left:0; right:0; bottom:0;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  opacity: 0.1; /* very subtle */
+  z-index: -1;
+}
+
+/* Buttons inside form */
+.patient-form-container button {
+  background:#026d6d; color:white; border:none; border-radius:8px;
+  padding:10px 25px; cursor:pointer; font-weight:600;
+  transition: background 0.3s, transform 0.2s;
+}
+.patient-form-container button:hover {
+  background:#034d4d; transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  header { padding: 15px 20px; }
+  .patient-card, .appointments-card, .patient-form-container { margin:20px 10px; }
+}

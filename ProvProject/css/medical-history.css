@@ -1,0 +1,245 @@
+/* ===========================
+   Global Styles
+=========================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7fafc;
+    color: #034d4d;
+    transition: background 0.3s;
+}
+
+/* Header */
+header {
+    background: #B5EAD7;
+    color: #034d4d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: slideDown 0.7s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+nav a {
+    color: #034d4d;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #026d6d;
+    transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+h2 {
+    color: #008080;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInText 0.8s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideInText {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Cards */
+.history-card {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: cardFadeIn 0.8s forwards;
+}
+
+.history-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 5px 3px;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background-color: #008080;
+}
+.btn-edit:hover {
+    background: linear-gradient(45deg, #008080, #006666);
+    transform: translateY(-2px);
+}
+
+.btn-delete {
+    background-color: #ff4d4d;
+}
+.btn-delete:hover {
+    background: linear-gradient(45deg, #ff4d4d, #e60000);
+    transform: translateY(-2px);
+}
+
+.btn-add {
+    background-color: #20b2aa;
+}
+.btn-add:hover {
+    background: linear-gradient(45deg, #20b2aa, #1a8f8a);
+    transform: translateY(-2px);
+}
+
+/* Forms */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+form.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Inputs */
+label {
+    font-weight: bold;
+    color: #006666;
+}
+
+input, textarea {
+    width: 96%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #008080;
+    box-shadow: 0 0 8px rgba(0,128,128,0.2);
+    outline: none;
+}
+
+/* Show form button */
+#showFormBtn {
+    display: block;
+    margin: 20px auto;
+    background: #008080;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#showFormBtn:hover {
+    background: linear-gradient(45deg, #008080, #006666);
+    transform: translateY(-2px);
+}
+
+/* Bounce hover effect */
+.bounce-hover {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.bounce-hover:hover {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce{
+    0%,20%,50%,80%,100%{transform:translateY(0);}
+    40%{transform:translateY(-8px);}
+    60%{transform:translateY(-4px);}
+}
+
+/* Responsive */
+@media(max-width:768px){ 
+    .dashboard-container{ 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    nav a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}

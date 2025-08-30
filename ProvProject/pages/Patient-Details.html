@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Details Form</title>
+  <link rel="stylesheet" href="../css/patient-details.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>HealthCare Portal</h1>
+    <div class="nav-links">
+      <a href="../index.html" class="bounce-hover">Home</a>
+      <a href="Appointments.html" class="bounce-hover">Appointments</a>
+      <a href="Patient-Portal.html" class="bounce-hover">Profile</a>
+      <a href="#" class="bounce-hover" id="logoutBtn">Logout</a>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div class="form-card">
+    <h2>Patient Details</h2>
+    <form id="patientForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required />
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" required>
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="">Select</option>
+        <option value="female">Female</option>
+        <option value="male">Male</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="contact">Contact Number:</label>
+      <input type="tel" id="contact_number" name="contact" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="address">Address (optional):</label>
+      <textarea id="address" name="address" rows="4" placeholder="Enter address if applicable"></textarea>
+
+      <button type="submit">Save to Profile</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script src="../js/patient-details.js"></script>
+</body>
+</html>

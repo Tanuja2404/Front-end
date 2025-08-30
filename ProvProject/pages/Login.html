@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Login</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Lifecare Plus</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html" class="bounce-hover">Home</a></li>
+        <li><a href="Appointments.html" class="bounce-hover">Appointments</a></li>
+        <li><a href="Services.html" class="bounce-hover">Services</a></li>
+        <li><a href="AboutUs.html" class="bounce-hover">About Us</a></li>
+        <li><a href="contact.html" class="bounce-hover">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Login Form -->
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Patient Login</h2>
+      <form id="loginForm">
+        <label for="email">Email ID:</label>
+        <input type="email" id="email" placeholder="Enter your Email ID" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+      </form>
+      <div id="message"></div>
+      <p>Don't have an account? <a href="Register.html">Sign Up</a></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../js/login.js"></script>
+
+</body>
+</html>

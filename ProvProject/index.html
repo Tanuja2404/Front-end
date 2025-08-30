@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Homepage</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>LifeCare Plus</h1>
+    <div class="auth-buttons">
+      <a id="login-link" href="pages/Login.html" class="settings-icon bounce-hover">Login</a>
+      <a id="signup-link" href="pages/Register.html" class="settings-icon bounce-hover">Signup</a>
+      <a id="dashboard-link" href="#" style="display:none;" class="settings-icon bounce-hover">Dashboard</a>
+      <a id="logout-link" href="#" style="display:none;" class="settings-icon bounce-hover" onclick="logout()">Logout</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Welcome to LifeCare Plus</h2>
+    <p>Dedicated to your health & wellness with world-class care</p>
+  </div>
+
+  <!-- Navigation Section -->
+  <div class="nav-section">
+    <a href="pages/Appointments.html">Book an Appointment</a>
+    <a href="pages/Services.html">Services</a>
+    <a href="pages/Contact.html">Contact</a>
+    <a href="pages/AboutUs.html">About Us</a>
+  </div>
+
+  <!-- Departments -->
+  <h2 class="section-title">Our Specialities</h2>
+  <section class="departments">
+    <div class="dept-card cardiology"><i class="fas fa-heartbeat"></i><h3>Cardiology</h3></div>
+    <div class="dept-card neurology"><i class="fas fa-brain"></i><h3>Neurology</h3></div>
+    <div class="dept-card ortho"><i class="fas fa-bone"></i><h3>Orthopedics</h3></div>
+    <div class="dept-card pediatrics"><i class="fas fa-baby"></i><h3>Pediatrics</h3></div>
+    <div class="dept-card radiology"><i class="fas fa-x-ray"></i><h3>Radiology</h3></div>
+    <div class="dept-card general"><i class="fas fa-stethoscope"></i><h3>General Medicine</h3></div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h2>About Our Hospital</h2>
+    <div class="about-cards">
+      <div class="card bg-pink"><h3>Our Doctors</h3><p>Experienced specialists across multiple departments to care for you.</p></div>
+      <div class="card bg-blue"><h3>Modern Facilities</h3><p>Equipped with state-of-the-art technology and advanced operation theatres for better healthcare.</p></div>
+      <div class="card bg-green"><h3>Patient-Centered Care</h3><p>We focus on personalized treatment plans and holistic recovery for every individual.</p></div>
+      <div class="card bg-yellow"><h3>Book Appointments</h3><p>Quickly schedule your appointment with our doctors online.</p></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LifeCare Plus. All Rights Reserved.</p>
+    <p>Providing quality healthcare with compassion and excellence.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
