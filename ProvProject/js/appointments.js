@@ -90,7 +90,7 @@ async function loadTimeSlots() {
                     if (!isNaN(parsedDate.getTime())) {
                         const option = document.createElement('option');
                         option.value = slot.id;
-                        option.text = `${parsedDate.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} (Dr. ${doctor})`;
+                        option.text = `${parsedDate.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} (${doctor})`;
                         if (slot.is_booked) {
                             option.text += ' (Already Booked)';
                             option.disabled = true;
