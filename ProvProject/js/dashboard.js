@@ -86,7 +86,7 @@ async function showUpcomingAppointments() {
             const doctor = app.slot.doctor_name || 'Unknown';
             const speciality = app.slot.specialty || 'General';
             const li = document.createElement('li');
-            li.innerHTML = `${dateStr} |  ${doctor} (${speciality})
+            li.innerHTML = `${dateStr} | Dr. ${doctor} (${speciality})
                 <div class="toast-buttons">
                     <button class="btn-view" onclick="viewAppointment('${app.id}')">View 👁️</button>
                     <button class="btn-delete" onclick="deleteAppointment('${app.id}')">Delete ❌</button>
