@@ -27,7 +27,7 @@ function signup() {
     messageEl.innerHTML = `<span style="color:green;">Signup Successful!</span>`;
     console.log('Response:', response.data);
     setTimeout(() => {
-      window.location.href = `Login1.html?user=${encodeURIComponent(email)}`;
+      window.location.href = `Login.html?user=${encodeURIComponent(email)}`;
     }, 1500);
   })
   .catch(error => {
