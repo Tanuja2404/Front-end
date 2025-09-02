@@ -198,3 +198,18 @@ th { background-color: #b2dfdb; color:#004d40; }
   header { padding: 15px 20px; }
   .patient-card, .appointments-card, .patient-form-container { margin:20px 10px; }
 }
+.bounce-hover {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.bounce-hover:hover {
+  animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+

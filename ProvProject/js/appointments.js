@@ -140,7 +140,7 @@ document.getElementById('appointmentForm').addEventListener('submit', async e =>
         const response = await axios.post(`${backendURL}/appointments/`, payload, { headers: axiosHeaders });
         console.log("✅ Appointment booked successfully:", response.data);
         messageBox.innerHTML = '<span style="color:green;">Appointment booked successfully!</span>';
-        window.location.href = `Patient_Portal.html?user=${encodeURIComponent(email)}`;
+        window.location.href = `Patient-Portal.html?user=${encodeURIComponent(email)}`;
         document.getElementById('appointmentForm').reset();
         document.getElementById('time').innerHTML = '<option value="">-- Select Time --</option>';
     } catch (error) {

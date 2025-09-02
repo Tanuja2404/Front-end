@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!token) {
         alert('Session expired. Please login again.');
-        window.location.href = 'login1.html';
+        window.location.href = 'login.html';
         return;
     }
 
@@ -129,4 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', addOrUpdateHistory);
 
     fetchMedicalHistory();
+    function logout() {
+    const currentUserId = localStorage.getItem('currentUserId');
+    const allTokens = JSON.parse(localStorage.getItem('user_tokens') || '{}');
+    delete allTokens[currentUserId];
+    localStorage.setItem('user_tokens', JSON.stringify(allTokens));
+    localStorage.removeItem('currentUserId');
+    window.location.href = 'login.html';
+}
 });

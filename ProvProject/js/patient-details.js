@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         delete allTokens[currentUserId];
         localStorage.setItem('user_tokens', JSON.stringify(allTokens));
         localStorage.removeItem('currentUserId');
-        window.location.href = 'login1.html';
+        window.location.href = 'login.html';
     });
 
     // Save patient details
@@ -69,4 +69,12 @@ Message: ${error.response.data.message || 'Unknown error from server'}`);
             }
         }
     });
+    function logout() {
+    const currentUserId = localStorage.getItem('currentUserId');
+    const allTokens = JSON.parse(localStorage.getItem('user_tokens') || '{}');
+    delete allTokens[currentUserId];
+    localStorage.setItem('user_tokens', JSON.stringify(allTokens));
+    localStorage.removeItem('currentUserId');
+    window.location.href = 'login.html';
+}
 });
