@@ -56,9 +56,40 @@ header h1 {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: url('https://img.freepik.com/free-photo/abstract-blur-hospital-clinic-interior_1203-8612.jpg') no-repeat center center/cover;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+  background-image: url('https://cdn.dribbble.com/users/856306/screenshots/4120104/medical_building_800x600.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* spread across hero section */
+  min-height: 45vh; /* hero section height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #034D4D;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(20px); }
 }
 
 .hero h2 {
@@ -92,13 +123,21 @@ header h1 {
   color: #004D40;
   border-bottom: 2px solid #004D40;
 }
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #034D4D; /* Matches your theme */
+  margin: 40px 0 20px;
+}
 
 /* Departments Section */
 .departments {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(3,1fr);
   gap: 20px;
   padding: 40px;
+  text-align: center;
 }
 
 .dept-card {
@@ -136,14 +175,15 @@ header h1 {
 }
 
 .about-section h2 {
-  font-size: 28px;
+  text-align: center;
+  font-size: 32px;
   margin-bottom: 30px;
-  color: #2F4F4F;
+  color: #034D4D; /* Dark teal for contrast */
 }
 
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(3,1fr);
   gap: 25px;
   max-width: 1100px;
   margin: 0 auto;

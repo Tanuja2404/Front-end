@@ -1,4 +1,4 @@
-const backendURL = 'https://daf4313b1e72.ngrok-free.app';
+const backendURL = 'https://healthcare-backend-cbehh5f8gmb8awbg.centralindia-01.azurewebsites.net';
 console.log("✅ Backend URL:", backendURL);
 
 const userEmail = localStorage.getItem('currentUserId');

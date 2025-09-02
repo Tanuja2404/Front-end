@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const backendURL = 'https://daf4313b1e72.ngrok-free.app';
+    const backendURL = 'https://healthcare-backend-cbehh5f8gmb8awbg.centralindia-01.azurewebsites.net';
     const dobInput = document.getElementById('dob');
     dobInput.setAttribute('max', new Date().toISOString().split('T')[0]);
 
