@@ -93,8 +93,16 @@ async function showUpcomingAppointments() {
                 </div>`;
             list.appendChild(li);
         });
-        toast.style.display = 'block';
-        closeBtn.onclick = () => toast.style.display = 'none';
+        
+        function showAppointmentToast(message) {
+    const toast = document.getElementById('appointmentsToast');
+    const list = document.getElementById('upcomingAppointmentsList');
+    const closeBtn = document.querySelector('.toast-close');
+
+    list.innerHTML = `<li>${message}</li>`;
+    toast.style.display = 'block';
+    closeBtn.onclick = () => toast.style.display = 'none';
+}
     } catch (err) {
         console.error(err);
         list.innerHTML = '<li>Error loading appointments.</li>';
