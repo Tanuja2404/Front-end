@@ -27,8 +27,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
     const response = await axios.post(`${backendURL}/auth/login`, formData, {
       headers: { 
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'ngrok-skip-browser-warning': '69420'
+        'Content-Type': 'application/x-www-form-urlencoded'
       }
     });
 

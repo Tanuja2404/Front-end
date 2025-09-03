@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    axios.defaults.headers.common['ngrok-skip-browser-warning'] = '69420';
+    
 
     async function fetchMedicalHistory() {
         try {

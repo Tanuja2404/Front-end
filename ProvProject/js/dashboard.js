@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const axiosHeaders = { Authorization: `Bearer ${token}`, 'ngrok-skip-browser-warning': '69420' };
+    const axiosHeaders = { Authorization: `Bearer ${token}` };
 
     async function fetchPatient() {
         try {
