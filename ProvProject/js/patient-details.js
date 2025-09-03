@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         try {
-            await axios.post(`${backendURL}/patients`, data, {
+            await axios.post(`${backendURL}/patients/`, data, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
