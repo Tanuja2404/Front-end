@@ -139,6 +139,9 @@ nav ul li a:hover {
   overflow: hidden;
 }
 
+/* ===========================
+   Login Form / Hero Section
+=========================== */
 .login-box {
   background: rgba(224,247,249,0.95);
   padding: 30px;
@@ -146,11 +149,26 @@ nav ul li a:hover {
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
   width: 350px;
   text-align: center;
-  opacity: 0;
-  transform: scale(0.9);
+
+  /* Start fully visible so animation triggers reliably */
+  opacity: 1;
+  transform: scale(1);
+
+  /* Animation */
   animation: fadeScaleIn 0.8s ease forwards;
   animation-delay: 0.5s;
   transition: all 0.4s ease, transform 0.3s ease;
+}
+
+@keyframes fadeScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .login-box:hover {
@@ -158,9 +176,6 @@ nav ul li a:hover {
   transform: translateY(-3px) scale(1.02);
 }
 
-@keyframes fadeScaleIn {
-  to { opacity: 1; transform: scale(1); }
-}
 
 /* Heading Animation */
 .login-box h2 {

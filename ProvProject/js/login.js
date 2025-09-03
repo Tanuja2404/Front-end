@@ -4,6 +4,10 @@ const backendURL = 'https://healthcare-backend-cbehh5f8gmb8awbg.centralindia-01.
 const urlParams = new URLSearchParams(window.location.search);
 const userEmail = urlParams.get('user');
 if (userEmail) document.getElementById('email').value = userEmail;
+document.addEventListener('DOMContentLoaded', () => {
+  const loginBox = document.querySelector('.login-box');
+  loginBox.style.animation = 'fadeScaleIn 0.8s ease forwards';
+});
 
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
