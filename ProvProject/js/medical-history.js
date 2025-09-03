@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    
 
     async function fetchMedicalHistory() {
         try {
@@ -58,11 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 await axios.post(`${backendURL}/medical-history/`, record);
                 alert('Medical history added successfully!');
             }
+
             editId = null;
             submitBtn.textContent = 'Save Record';
             formHeading.textContent = 'Add New Medical History';
             form.reset();
-            form.style.display = 'none';
+            form.classList.remove('show');          // Hide form with animation
             showFormBtn.style.display = 'inline-block';
             fetchMedicalHistory();
         } catch (error) {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         formHeading.textContent = 'Update Medical History';
         submitBtn.textContent = 'Update History';
-        form.style.display = 'block';
+        form.classList.add('show');                // Show form with animation
         showFormBtn.style.display = 'none';
     }
 
@@ -121,20 +121,23 @@ document.addEventListener('DOMContentLoaded', () => {
         historyList.appendChild(card);
     }
 
+    // Show form when "Add New" is clicked
     showFormBtn.addEventListener('click', () => {
-        form.style.display = 'block';
+        form.classList.add('show');                  // Add show class for animation
         showFormBtn.style.display = 'none';
+        formHeading.textContent = 'Add New Medical History';
+        submitBtn.textContent = 'Save Record';
     });
 
     form.addEventListener('submit', addOrUpdateHistory);
 
     fetchMedicalHistory();
-    function logout() {
-    const currentUserId = localStorage.getItem('currentUserId');
-    const allTokens = JSON.parse(localStorage.getItem('user_tokens') || '{}');
-    delete allTokens[currentUserId];
-    localStorage.setItem('user_tokens', JSON.stringify(allTokens));
-    localStorage.removeItem('currentUserId');
-    window.location.href = 'login.html';
-}
 });
+function logout() {
+        const currentUserId = localStorage.getItem('currentUserId');
+        const allTokens = JSON.parse(localStorage.getItem('user_tokens') || '{}');
+        delete allTokens[currentUserId];
+        localStorage.setItem('user_tokens', JSON.stringify(allTokens));
+        localStorage.removeItem('currentUserId');
+        window.location.href = 'login.html';
+    }

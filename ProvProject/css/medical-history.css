@@ -50,6 +50,11 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+/* Logout specific hover */
+nav a.logout:hover {
+    color: #ff4d4d;
+}
+
 /* Container */
 .container {
     max-width: 900px;
@@ -160,15 +165,17 @@ form {
     border-radius: 10px;
     border: 1px solid #ccc;
     margin-top: 20px;
-    display: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+    max-height: 0;
+    overflow: hidden;
     opacity: 0;
     transform: translateY(10px);
+    transition: max-height 0.5s ease, opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 form.show {
     display: block;
+    max-height: 1000px; /* large enough for content */
     opacity: 1;
     transform: translateY(0);
 }
