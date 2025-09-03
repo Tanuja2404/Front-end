@@ -75,40 +75,43 @@ async function showUpcomingAppointments() {
     list.innerHTML = '<li>Loading appointments...</li>';
 
     try {
-        const response = await axios.get(`${backendURL}/appointments/me`, { headers: { Authorization: `Bearer ${token}`, 'ngrok-skip-browser-warning': '69420' } });
+        const response = await axios.get(`${backendURL}/appointments/me`, {
+            headers: { Authorization: `Bearer ${token}`, 'ngrok-skip-browser-warning': '69420' }
+        });
         const appointments = response.data.upcoming || [];
         list.innerHTML = '';
 
-        if (appointments.length === 0) list.innerHTML = '<li>No upcoming appointments.</li>';
+        if (appointments.length === 0) {
+            // Do NOT show toast if there are no appointments
+            list.innerHTML = '<li>No upcoming appointments.</li>';
+            toast.style.display = 'none';
+            return;
+        }
 
         appointments.forEach(app => {
             const dateStr = new Date(app.slot.datetime).toLocaleString([], { dateStyle:'short', timeStyle:'short' });
             const doctor = app.slot.doctor_name || 'Unknown';
             const speciality = app.slot.specialty || 'General';
             const li = document.createElement('li');
-            li.innerHTML = `${dateStr} |  ${doctor} (${speciality})
+            li.innerHTML = `${dateStr} | ${doctor} (${speciality})
                 <div class="toast-buttons">
                     <button class="btn-view" onclick="viewAppointment('${app.id}')">View 👁️</button>
                     <button class="btn-delete" onclick="deleteAppointment('${app.id}')">Delete ❌</button>
                 </div>`;
             list.appendChild(li);
         });
-        
-        function showAppointmentToast(message) {
-    const toast = document.getElementById('appointmentsToast');
-    const list = document.getElementById('upcomingAppointmentsList');
-    const closeBtn = document.querySelector('.toast-close');
 
-    list.innerHTML = `<li>${message}</li>`;
-    toast.style.display = 'block';
-    closeBtn.onclick = () => toast.style.display = 'none';
-}
+        // Show toast only if there is at least one appointment
+        toast.style.display = 'block';
+        closeBtn.onclick = () => toast.style.display = 'none';
+
     } catch (err) {
         console.error(err);
         list.innerHTML = '<li>Error loading appointments.</li>';
         toast.style.display = 'block';
     }
 }
+
 
 function logout() {
     const currentUserId = localStorage.getItem('currentUserId');

@@ -11,7 +11,6 @@ if (!token) {
 }
 
 const headers = { Authorization: `Bearer ${token}` };
-if (backendURL.includes('ngrok')) headers['ngrok-skip-browser-warning'] = '69420';
 
 // Logout
 document.getElementById('logoutBtn').addEventListener('click', () => {
@@ -49,6 +48,47 @@ async function loadPatient() {
   document.getElementById('editAddress').value = patient.address || '';
 }
 loadPatient();
+document.getElementById('editBtn').addEventListener('click', () => {
+  document.getElementById('editFormContainer').style.display = 'block';
+});
+
+// Handle Edit Form Submission
+document.getElementById('editPatientForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const updatedPatient = {
+    name: document.getElementById('editName').value,
+    age: document.getElementById('editAge').value,
+    dob: document.getElementById('editDOB').value,
+    gender: document.getElementById('editGender').value,
+    contact_number: document.getElementById('editPhone').value,
+    email: document.getElementById('editEmail').value,
+    address: document.getElementById('editAddress').value
+  };
+
+  try {
+    await axios.patch(`${backendURL}/patients/me`, updatedPatient, { headers });
+    alert('Patient details updated successfully!');
+    document.getElementById('editFormContainer').style.display = 'none';
+    loadPatient(); // Refresh displayed patient info
+  } catch (err) {
+    console.error(err);
+    alert('Failed to update patient details.');
+  }
+});
+
+// Handle Delete Patient
+document.getElementById('deleteBtn').addEventListener('click', async () => {
+  if (!confirm('Are you sure you want to delete your patient record? This cannot be undone.')) return;
+
+  try {
+    await axios.delete(`${backendURL}/patients/me`, { headers });
+    alert('Patient record deleted successfully!');
+  } catch (err) {
+    console.error(err);
+    alert('Failed to delete patient record.');
+  }
+});
 
 // Load Appointments
 async function loadAppointments() {
@@ -104,4 +144,6 @@ async function loadAppointments() {
   }
 }
 loadAppointments();
+
+
 
