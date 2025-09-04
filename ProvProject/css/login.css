@@ -103,18 +103,10 @@ nav ul li a:hover::after {
   text-align: center;
 
   /* Fade-in when page loads */
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s ease forwards;
-}
+  opacity: 1;
+  transform: translateY(0);
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
-
 /* Hover effect */
 .login-box:hover {
   transform: scale(1.02);
